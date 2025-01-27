@@ -7,6 +7,7 @@
           {{ tab === "received" ? message.sender_username : message.receiver_username }}
         </strong>
         <p>{{ message.content }}</p>
+        <span class="message-time">{{ message.created_at }}</span>
       </div>
       <button class="delete-button" @click="$emit('delete', message.id)">Delete</button>
     </li>
@@ -70,6 +71,14 @@ export default {
   margin: 5px 0 0;
   font-size: 0.9rem;
   color: #555;
+}
+
+/* Time Styling */
+.message-time {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.8rem;
+  color: #777;
 }
 
 /* Delete Button */
